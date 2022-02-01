@@ -1,0 +1,704 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<variables>
+<variable id="R{y)a=_)*ew!}o`Yjp$j">Power</variable>
+<variable id="Cg1_5jQtT9Go^6:$_t;%">Time</variable>
+<variable id="`(eEPRI@j9[FqLND.wVk">Sleep</variable>
+</variables>
+<block type="procedures_defnoreturn" id="2~ZJ7~VsDs]j3p8A@Cba" x="-1321" y="-595">
+<field name="NAME">Set Direction DPAD</field>
+<comment pinned="false" h="80" w="160">Sets the direction of the motors</comment>
+<statement name="STACK">
+<block type="dcMotor_setProperty_Direction" id="SRIYv6g~4{C(!m%-2#1Z">
+<field name="IDENTIFIER">leftFRONTAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"leftFRONT"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="K5g6H[Q;.f^:I{8BmKzB">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="zhAG{$1x@NI|p;.1~,op">
+<field name="IDENTIFIER">leftBACKAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"leftBACK"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id=".Q(d3q#?uH^wX$}[rej{">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="N6sdJeCj5`iV8rRkW7N{">
+<field name="IDENTIFIER">rightFRONTAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"rightFRONT"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="HS4|^/^9wk[x*f]LMnX|">
+<field name="DIRECTION">FORWARD</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="Vt{gU0=X/mDKBrkg18Q6">
+<field name="IDENTIFIER">rightBACKAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"rightBACK"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="+=a=J_/!OCZEP9TCy4l,">
+<field name="DIRECTION">FORWARD</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="S?L=$fL+A3`/Dwq:)hdw" x="-1311" y="-309">
+<mutation>
+<arg name="Power" varid="R{y)a=_)*ew!}o`Yjp$j"/>
+<arg name="Time" varid="Cg1_5jQtT9Go^6:$_t;%"/>
+</mutation>
+<field name="NAME">Shift Right</field>
+<comment pinned="false" h="106" w="178">Mess around with the 500 millisecond duration to get robot over to carousal</comment>
+<statement name="STACK">
+<block type="procedures_callnoreturn" id="82%#.:_wp@*|tm8})AgH">
+<mutation name="Set Direction DPAD"/>
+<next>
+<block type="procedures_callnoreturn" id="kPp,S._}Rs_Q#DOH]1`e">
+<mutation name="Move Right Power">
+<arg name="Power"/>
+</mutation>
+<value name="ARG0">
+<block type="variables_get" id="VYhfGtw9,1#)6*T~qpzP">
+<field name="VAR" id="R{y)a=_)*ew!}o`Yjp$j">Power</field>
+</block>
+</value>
+<next>
+<block type="linearOpMode_sleep_Number" id="6;P5::SFNN]cOU!|ao)t">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="?~{Wk{O]6,#`Oo0JGorJ">
+<field name="NUM">500</field>
+</shadow>
+<block type="variables_get" id="K3C|Ic[:ZoYNAS_rOH}N">
+<field name="VAR" id="Cg1_5jQtT9Go^6:$_t;%">Time</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="HIe[:#^E(to-gni2.ZkY" x="-794" y="-327">
+<mutation>
+<arg name="Power" varid="R{y)a=_)*ew!}o`Yjp$j"/>
+<arg name="Time" varid="Cg1_5jQtT9Go^6:$_t;%"/>
+</mutation>
+<field name="NAME">Shift Left</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="procedures_callnoreturn" id="717BE9.JCz7fMALY!4K6">
+<mutation name="Set Direction DPAD"/>
+<next>
+<block type="procedures_callnoreturn" id="fYE~YeU#U2sz|zi6sKhP">
+<mutation name="Move Left Power">
+<arg name="Power"/>
+</mutation>
+<value name="ARG0">
+<block type="variables_get" id="_.rc$d:s8adm}Hn8E}{4">
+<field name="VAR" id="R{y)a=_)*ew!}o`Yjp$j">Power</field>
+</block>
+</value>
+<next>
+<block type="linearOpMode_sleep_Number" id="}N800Ow]q@[hJ%ZbpMce">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="Zc*hYGXJsL;na;{+eXp9">
+<field name="NUM">500</field>
+</shadow>
+<block type="variables_get" id="FRCr.]^`m8ozrfn[*^d?">
+<field name="VAR" id="Cg1_5jQtT9Go^6:$_t;%">Time</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="WtpyD@tEu+EoY=P9iY,D" deletable="false" editable="false" x="-368" y="-331">
+<field name="NAME">runOpMode</field>
+<comment pinned="false" h="32" w="532">This function is executed when this Op Mode is selected from the Driver Station.</comment>
+<statement name="STACK">
+<block type="comment" id="Lc#BFtj*NTB48YL;eBl.">
+<field name="COMMENT">Put initialization blocks here.</field>
+<next>
+<block type="linearOpMode_waitForStart" id=":`$wN_ci`O;o6P0~.(+g">
+<next>
+<block type="controls_if" id="}Q?5mbxSO8Di;i!__6[y">
+<value name="IF0">
+<block type="linearOpMode_opModeIsActive" id=")o%YFX/#9kvv^sgXr4~5"/>
+</value>
+<statement name="DO0">
+<block type="comment" id="(rU-p_T_/B|vExcs}liL">
+<field name="COMMENT">Put run blocks here.</field>
+<next>
+<block type="controls_whileUntil" id="^0Kagy/e+Ea{rbZPv2G6">
+<field name="MODE">WHILE</field>
+<value name="BOOL">
+<block type="linearOpMode_opModeIsActive" id="e)cr{!2VIET83s,JWC.="/>
+</value>
+<statement name="DO">
+<block type="comment" id="Jh/;L$n@JuX8AQJDFCul">
+<field name="COMMENT">Put loop blocks here.</field>
+<comment pinned="false" h="98" w="366">Goal:
+1) Shift right to carousel
+2) Turn on motors for carousel
+3) Drive forward into parking zone</comment>
+<next>
+<block type="procedures_callnoreturn" id="acf;iJFp|BJq:,o#DTta">
+<mutation name="Shift Left">
+<arg name="Power"/>
+<arg name="Time"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="N4LlSa52$[Dv=6%_~mVh">
+<field name="NUM">0.4</field>
+</block>
+</value>
+<value name="ARG1">
+<block type="math_number" id="W!Lct]D7!@Emah6/g$Ui">
+<field name="NUM">2000</field>
+</block>
+</value>
+<next>
+<block type="procedures_callnoreturn" id="^A)Ffx!U=u7Q*t!+4[#n">
+<mutation name="Shift Left">
+<arg name="Power"/>
+<arg name="Time"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="X#m,Si}d=%ECT]nf!FQ`">
+<field name="NUM">0</field>
+</block>
+</value>
+<value name="ARG1">
+<block type="math_number" id="^192m8o]=K@|+/;|nHH)">
+<field name="NUM">2000</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="!*rW)xyp+RI[:^!|oxuW">
+<field name="IDENTIFIER">leftCARASOULAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"leftCARASOUL"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="P#_xWTDV3hvRH.?Ws@bQ">
+<field name="DIRECTION">FORWARD</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="(IEz4!8+P;X8)LdrB:xm">
+<field name="IDENTIFIER">leftCARASOULAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"leftCARASOUL"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="J9g6n!EOw%4^)|yj~s|o">
+<field name="NUM">0.6</field>
+</shadow>
+</value>
+<next>
+<block type="procedures_callnoreturn" id="P~)M[m][X^LH(#[@m.}o">
+<mutation name="Shift Left">
+<arg name="Power"/>
+<arg name="Time"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="akb~AX;Ob,KRXv.Mbr=;">
+<field name="NUM">0</field>
+</block>
+</value>
+<value name="ARG1">
+<block type="math_number" id="}.iiDC%5_6=R{N,1OBGI">
+<field name="NUM">5000</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="q(c.M9x+q8oC?](x+fg6">
+<field name="IDENTIFIER">leftCARASOULAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"leftCARASOUL"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="@]ki8eku2?i~C^jjg~t~">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="procedures_callnoreturn" id="xW!$#BaQ@AY6+6#rf;O[">
+<mutation name="Move Forward">
+<arg name="Power"/>
+<arg name="Time"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="IVR7Ex;GQDxV:SM2.uT|">
+<field name="NUM">0.4</field>
+</block>
+</value>
+<value name="ARG1">
+<block type="math_number" id="ePA69f2;qwMRMy6V6r@`">
+<field name="NUM">1000</field>
+</block>
+</value>
+<next>
+<block type="procedures_callnoreturn" id="pB{7l{j;s05R8WPl[b9-">
+<mutation name="Shift Left">
+<arg name="Power"/>
+<arg name="Time"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="3x1%X#(%4~Fo,t%SITs$">
+<field name="NUM">0</field>
+</block>
+</value>
+<value name="ARG1">
+<block type="math_number" id="4{SX[qz48-][tO=)g6_W">
+<field name="NUM">3000</field>
+</block>
+</value>
+<next>
+<block type="procedures_callnoreturn" id="XNAYur]-[#xxLV{RWEXb">
+<mutation name="Shift Left">
+<arg name="Power"/>
+<arg name="Time"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="yraSRt_W5Gk~Ih-@rS.I">
+<field name="NUM">0.4</field>
+</block>
+</value>
+<value name="ARG1">
+<block type="math_number" id="PJIv/NTW)_$seh4},5L-">
+<field name="NUM">200</field>
+</block>
+</value>
+<next>
+<block type="procedures_callnoreturn" id="ZbTSkv1noTQIU|JJZ;gi">
+<mutation name="Shift Left">
+<arg name="Power"/>
+<arg name="Time"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="2)F!O[o[vt*yy%a{j9rC">
+<field name="NUM">0</field>
+</block>
+</value>
+<value name="ARG1">
+<block type="math_number" id="NitUt)P9Z%hUaz.MjROQ">
+<field name="NUM">10000000</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="w%#[AQ:E/+V;#231,beJ" x="-1307" y="-113">
+<mutation>
+<arg name="Power" varid="R{y)a=_)*ew!}o`Yjp$j"/>
+</mutation>
+<field name="NAME">Move Right Power</field>
+<comment pinned="false" h="80" w="160">Adjusts the power of shifting right</comment>
+<statement name="STACK">
+<block type="dcMotor_setDualProperty" id="#Pf)yfs6E)7JVJU?G?$0">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">leftBACKAsDcMotor</field>
+<field name="IDENTIFIER2">leftFRONTAsDcMotor</field>
+<comment pinned="false" h="101" w="394">The Y axis of a joystick ranges from -1 in its topmost position to +1 in its bottommost position.  We negate this value so that the topmost position corresponds to maximum forward power.</comment>
+<data>{"IDENTIFIER1":"leftBACK","IDENTIFIER2":"leftFRONT"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id="*6]9HU[_eIicJ%mRd|8_">
+<field name="NUM">-0.3</field>
+</shadow>
+<block type="math_single" id="V{y7}MQpv)gT;bt#I$Q+">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="H{RWNH2ix]0xMy1R{Ke(">
+<field name="VAR" id="R{y)a=_)*ew!}o`Yjp$j">Power</field>
+</block>
+</value>
+</block>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="pZS70wC1S~+m8v#k.DhB">
+<field name="NUM">0.3</field>
+</shadow>
+<block type="variables_get" id="!vy:`ux)p5+;{Py~qG%-">
+<field name="VAR" id="R{y)a=_)*ew!}o`Yjp$j">Power</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setDualProperty_Number" id="%Z7`OUQ:tZD2g8v;TQv[">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">rightBACKAsDcMotor</field>
+<field name="IDENTIFIER2">rightFRONTAsDcMotor</field>
+<data>{"IDENTIFIER1":"rightBACK","IDENTIFIER2":"rightFRONT"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id="56j;+M`WYUwN{#^O5C*q">
+<field name="NUM">0.3</field>
+</shadow>
+<block type="variables_get" id="[5l:zpB;.p%pyY}#(g7[">
+<field name="VAR" id="R{y)a=_)*ew!}o`Yjp$j">Power</field>
+</block>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="N(rb-[~7;y8#_WxSMuRw">
+<field name="NUM">-0.3</field>
+</shadow>
+<block type="math_single" id="S~atbdK*o5DIl5BHY;nD">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number" id=")K.IqW_QJZMWW]vw;Xnj">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="1nRoKJA?Q@yVqEdU?)sK">
+<field name="VAR" id="R{y)a=_)*ew!}o`Yjp$j">Power</field>
+</block>
+</value>
+</block>
+</value>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="0vi#;=RkbqS3=xP^;P#w" x="-786" y="-113">
+<mutation>
+<arg name="Power" varid="R{y)a=_)*ew!}o`Yjp$j"/>
+</mutation>
+<field name="NAME">Move Left Power</field>
+<comment pinned="false" h="80" w="160">Describe this function...http://192.168.43.1:8080/?page=FtcBlocks.html?project=Drive&amp;pop=true</comment>
+<statement name="STACK">
+<block type="dcMotor_setDualProperty" id="]CuGB,z9b{fTp:s$EYo}">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">leftBACKAsDcMotor</field>
+<field name="IDENTIFIER2">leftFRONTAsDcMotor</field>
+<comment pinned="false" h="101" w="394">The Y axis of a joystick ranges from -1 in its topmost position to +1 in its bottommost position.  We negate this value so that the topmost position corresponds to maximum forward power.</comment>
+<data>{"IDENTIFIER1":"leftBACK","IDENTIFIER2":"leftFRONT"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id=".J{M%[u?+XeeM|lt9.~R">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="kyT9^1^s0AaCP}zcDq1H">
+<field name="VAR" id="R{y)a=_)*ew!}o`Yjp$j">Power</field>
+</block>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="*j,9O|JPRva#TG9@JITT">
+<field name="NUM">-1</field>
+</shadow>
+<block type="math_single" id="g0VxPYz$Z~SF8Bt1co+5">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="whGq)1[HpxcK@DXy+-o-">
+<field name="VAR" id="R{y)a=_)*ew!}o`Yjp$j">Power</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setDualProperty_Number" id="FAd/q{,]n?y*7t4G()+2">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">rightBACKAsDcMotor</field>
+<field name="IDENTIFIER2">rightFRONTAsDcMotor</field>
+<data>{"IDENTIFIER1":"rightBACK","IDENTIFIER2":"rightFRONT"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id="FmTMi35rqtHyB$F#rdAJ">
+<field name="NUM">-1</field>
+</shadow>
+<block type="math_single" id="JX;N`h,:}ZrJLJR{w-#3">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="!Rmq~C0{_WU1oSv+U;($">
+<field name="VAR" id="R{y)a=_)*ew!}o`Yjp$j">Power</field>
+</block>
+</value>
+</block>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="$MXi}~oZoB?$S)a=k~D.">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="nz^[UIC3*/EfHE1Ze(W6">
+<field name="VAR" id="R{y)a=_)*ew!}o`Yjp$j">Power</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="w3x4xHk/kcaym{uI^+ow" x="-1317" y="175">
+<mutation>
+<arg name="Power" varid="R{y)a=_)*ew!}o`Yjp$j"/>
+<arg name="Time" varid="Cg1_5jQtT9Go^6:$_t;%"/>
+</mutation>
+<field name="NAME">Move Forward</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="procedures_callnoreturn" id="vY`GwSQc0vNMXnx=t-Bh">
+<mutation name="Set Direction DPAD"/>
+<next>
+<block type="procedures_callnoreturn" id="6vI?0%ALS2%-/N-0;)`.">
+<mutation name="Move Forward Power">
+<arg name="Power"/>
+</mutation>
+<value name="ARG0">
+<block type="variables_get" id="~1#|FsqULIVU,]Sh2$Be">
+<field name="VAR" id="R{y)a=_)*ew!}o`Yjp$j">Power</field>
+</block>
+</value>
+<next>
+<block type="linearOpMode_sleep_Number" id="Lt#K?P=ZzmKm,#vqKhi5">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="!(r~B|qmt(^7AEKv`@7E">
+<field name="NUM">1200</field>
+</shadow>
+<block type="variables_get" id=":TQTT*P?:WvX(}EpM|/2">
+<field name="VAR" id="Cg1_5jQtT9Go^6:$_t;%">Time</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="709Z|i[c.0$Gsg6hk/xx" x="-762" y="163">
+<mutation>
+<arg name="Power" varid="R{y)a=_)*ew!}o`Yjp$j"/>
+<arg name="Sleep" varid="`(eEPRI@j9[FqLND.wVk"/>
+</mutation>
+<field name="NAME">Move Backward</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="procedures_callnoreturn" id="KIDVB@AS4OCsYoNNw`Gd">
+<mutation name="Set Direction DPAD"/>
+<next>
+<block type="procedures_callnoreturn" id="kf6cT?(W-qpRBU0_%~Wr">
+<mutation name="Move Backward Power">
+<arg name="Power"/>
+</mutation>
+<value name="ARG0">
+<block type="variables_get" id="@8+2ZYyHIgBcK;slPy`y">
+<field name="VAR" id="R{y)a=_)*ew!}o`Yjp$j">Power</field>
+</block>
+</value>
+<next>
+<block type="linearOpMode_sleep_Number" id="$kVUq$QB|t`eZb({$)_(">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="=s^(WY{23_UsB(MXz-f-">
+<field name="NUM">500</field>
+</shadow>
+<block type="variables_get" id="NrP:5(BtGoZU[U^@T2O}">
+<field name="VAR" id="`(eEPRI@j9[FqLND.wVk">Sleep</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="Z_ElHqYcczB`c^g24.Uw" x="-1308" y="375">
+<mutation>
+<arg name="Power" varid="R{y)a=_)*ew!}o`Yjp$j"/>
+</mutation>
+<field name="NAME">Move Forward Power</field>
+<comment pinned="false" h="80" w="160">Describe this function...http://192.168.43.1:8080/?page=FtcBlocks.html?project=Drive&amp;pop=true</comment>
+<statement name="STACK">
+<block type="dcMotor_setDualProperty" id="kiD1T*o@I!8z`VqlHrS[">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">leftBACKAsDcMotor</field>
+<field name="IDENTIFIER2">leftFRONTAsDcMotor</field>
+<comment pinned="false" h="101" w="394">The Y axis of a joystick ranges from -1 in its topmost position to +1 in its bottommost position.  We negate this value so that the topmost position corresponds to maximum forward power.</comment>
+<data>{"IDENTIFIER1":"leftBACK","IDENTIFIER2":"leftFRONT"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id="Y|)i70z9cx!:S,liOSr:">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="dCOpN6{))1#d#Ji.|K!y">
+<field name="VAR" id="R{y)a=_)*ew!}o`Yjp$j">Power</field>
+</block>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="RYGYz+Ye{OT[uxFQ*-%{">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="ve[}Ld|puaxi*IB]6{jr">
+<field name="VAR" id="R{y)a=_)*ew!}o`Yjp$j">Power</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setDualProperty_Number" id="cF}-h9i$|vb5r}SJ~bB8">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">rightBACKAsDcMotor</field>
+<field name="IDENTIFIER2">rightFRONTAsDcMotor</field>
+<data>{"IDENTIFIER1":"rightBACK","IDENTIFIER2":"rightFRONT"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id="]%#47cXb$O6m5j)%@U*n">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="1cQ7Xv$`#DuVcpZGgu0H">
+<field name="VAR" id="R{y)a=_)*ew!}o`Yjp$j">Power</field>
+</block>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="Tw,%q++9SZ,qg:KbVRZh">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="55GZjZ401eb1qrG)gJJ_">
+<field name="VAR" id="R{y)a=_)*ew!}o`Yjp$j">Power</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="|@xUh/,aXO6wov/{^Zn|" x="-763" y="359">
+<mutation>
+<arg name="Power" varid="R{y)a=_)*ew!}o`Yjp$j"/>
+</mutation>
+<field name="NAME">Move Backward Power</field>
+<comment pinned="false" h="80" w="160">Describe this function...http://192.168.43.1:8080/?page=FtcBlocks.html?project=Drive&amp;pop=true</comment>
+<statement name="STACK">
+<block type="dcMotor_setDualProperty" id="fU9%6Zu.oMM70^#qu`A,">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">rightBACKAsDcMotor</field>
+<field name="IDENTIFIER2">leftBACKAsDcMotor</field>
+<comment pinned="false" h="101" w="394">The Y axis of a joystick ranges from -1 in its topmost position to +1 in its bottommost position.  We negate this value so that the topmost position corresponds to maximum forward power.</comment>
+<data>{"IDENTIFIER1":"rightBACK","IDENTIFIER2":"leftBACK"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id="v{#([0$mVpCyaddYciEv">
+<field name="NUM">-1</field>
+</shadow>
+<block type="math_single" id="5Q69X2j6!=GnD@+kVUPP">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number" id="Pw+cF]k3,G74Y`gvxQfT">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="viU6p:0:dkR5WFWE+g`I">
+<field name="VAR" id="R{y)a=_)*ew!}o`Yjp$j">Power</field>
+</block>
+</value>
+</block>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="6|kvR3OraW^jtrGTwA=[">
+<field name="NUM">-1</field>
+</shadow>
+<block type="math_single" id="AWzWGEU^y57(6?T?Du7.">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id=")t|^5H0QLr8QfP_6l@9@">
+<field name="VAR" id="R{y)a=_)*ew!}o`Yjp$j">Power</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setDualProperty_Number" id="E2v,Q`S}j:z3TWRFPxF$">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">rightFRONTAsDcMotor</field>
+<field name="IDENTIFIER2">leftFRONTAsDcMotor</field>
+<data>{"IDENTIFIER1":"rightFRONT","IDENTIFIER2":"leftFRONT"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id="n?K*3{qT[6O-}ruxRQwH">
+<field name="NUM">-1</field>
+</shadow>
+<block type="math_single" id=":=,]{V0?Xw04|dA7[H0J">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="jID2CR]@(Px[D668Bd{b">
+<field name="VAR" id="R{y)a=_)*ew!}o`Yjp$j">Power</field>
+</block>
+</value>
+</block>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="^Y1`+cog#hgjKJfmpkQ7">
+<field name="NUM">-1</field>
+</shadow>
+<block type="math_single" id="L`fD}Xt.Qle2vk8zSD-|">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="(Cv65W^-=Sv{x;#tF:Dk">
+<field name="VAR" id="R{y)a=_)*ew!}o`Yjp$j">Power</field>
+</block>
+</value>
+</block>
+</value>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</xml>
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Extra>
+<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
+<Enabled value="true" />
+</Extra>
