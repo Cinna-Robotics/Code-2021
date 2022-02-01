@@ -1,0 +1,1004 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<variables>
+<variable id="oIZk%cE?j~AQCf5?J_L0">Position</variable>
+<variable id="eW40?n)ab+~d3S:Va-,{">time</variable>
+</variables>
+<block type="procedures_defnoreturn" id="JD=^V.OZHGQo%GeR!M?*" x="221" y="-392">
+<field name="NAME">Set Direction Normal</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="dcMotor_setProperty_Direction" id="{LD%;4q8tv-,SU4tYg$Z">
+<field name="IDENTIFIER">leftFRONTAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"leftFRONT"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id=";kg,@Vy;4w#N.#S,AdDS">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="uqc%a5^ty;*PJ%v|%$ee">
+<field name="IDENTIFIER">leftBACKAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"leftBACK"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="q|tlRq/qPuDfBW+kuCUx">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="Ahi:W^Q=31f`Y(:r=Jl)">
+<field name="IDENTIFIER">rightFRONTAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"rightFRONT"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="2VWx*gS2LkK]@EeEkn$2">
+<field name="DIRECTION">FORWARD</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="kd6/C*!#eTt/?IO6]sSY">
+<field name="IDENTIFIER">rightBACKAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"rightBACK"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="Vfm6dR0Tc-8Ox~StWR{i">
+<field name="DIRECTION">FORWARD</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="OpN8!1beqW{8Bw6M/?m+" deletable="false" editable="false" x="-518" y="-212">
+<field name="NAME">runOpMode</field>
+<comment pinned="false" h="80" w="160">This function is executed when this Op Mode is selected from the Driver Station.</comment>
+<statement name="STACK">
+<block type="comment" id="2E)2A*`b^PiWrgwVLCzD">
+<field name="COMMENT">Reverse one of the drive motors.</field>
+<next>
+<block type="dcMotor_setProperty_Direction" id="G)y5%1:KzXrVb`,mtd=2">
+<field name="IDENTIFIER">ArmAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"Arm"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="-8{A1kTC5@y-%4B@I_9%">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="crServo_setProperty_Direction" id=".2N)BXDb4nKiv:ggjj2E">
+<field name="IDENTIFIER">LEFTservoAsCRServo</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"LEFTservo"}</data>
+<value name="VALUE">
+<shadow type="crServo_typedEnum_direction" id="!xSWpL{FHD6M1gaR;jlG">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="crServo_setProperty_Direction" id="paYN,u]Z.cH)elC#6i+l">
+<field name="IDENTIFIER">RIGHTservoAsCRServo</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"RIGHTservo"}</data>
+<value name="VALUE">
+<shadow type="crServo_typedEnum_direction" id="4M~D(|wWN70):%}}HD?O">
+<field name="DIRECTION">FORWARD</field>
+</shadow>
+</value>
+<next>
+<block type="linearOpMode_waitForStart" id=":K8^U;yjvZn8aWa~t|#1">
+<next>
+<block type="controls_if" id="0#o7qH*u*qfz$Bq_V/`k">
+<value name="IF0">
+<block type="linearOpMode_opModeIsActive" id="[bChm|`3)2ph$xioy@{("/>
+</value>
+<statement name="DO0">
+<block type="comment" id=":*~E^;jympAIAK*1RqqM">
+<field name="COMMENT">Put run blocks here.</field>
+<next>
+<block type="controls_whileUntil" id=";?u-rJ#FN3IEUo%rzP0!">
+<field name="MODE">WHILE</field>
+<value name="BOOL">
+<block type="linearOpMode_opModeIsActive" id="-(|WoGbw`fofYl;9=5+0"/>
+</value>
+<statement name="DO">
+<block type="procedures_callnoreturn" id="=`v]t68AI[XKA76If0rn">
+<mutation name="Set Direction Normal"/>
+<next>
+<block type="comment" id="j%/]x0!:SV!7p5sYtU9W">
+<field name="COMMENT">Put loop blocks here.</field>
+<next>
+<block type="procedures_callnoreturn" id="P5n|;Q*((a*wj`gYM6CV">
+<mutation name="Move lol"/>
+<next>
+<block type="dcMotor_setProperty_Number" id="KsWac@[@KW6=AX=1a=Ys">
+<field name="IDENTIFIER">ArmAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"Arm"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="!3V,~UjIPKzKfdlFc#lU">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_single" id="%1N%R+_cZ}|mv-44;Tt]">
+<field name="OP">NEG</field>
+<value name="NUM">
+<block type="math_arithmetic" id="L9u[))y$_5{mgX1tHs:n">
+<field name="OP">DIVIDE</field>
+<value name="A">
+<shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty" id="inB#m|.7_s8^f00O09#6">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">LeftBumper</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="CQPCnFuynh5xiEvR}w;4">
+<field name="NUM">2</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id=";hT0Jk)@E[Og%Jn+o;VV">
+<field name="IDENTIFIER">ArmAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"Arm"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="qlw:;5y=D+C!%~I@=tGS">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="LVQ/)L#U5azFEUjl_S~6">
+<field name="OP">DIVIDE</field>
+<value name="A">
+<shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty" id="n=P)g`Uam4o7LR8Dh|s1">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">RightBumper</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="R$j]i$u+E|q,nI6[m4}o">
+<field name="NUM">2</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="crServo_setProperty_Number" id="re3E6Z1=FDV}$U.A;yN-">
+<field name="IDENTIFIER">LEFTservoAsCRServo</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"LEFTservo"}</data>
+<value name="VALUE">
+<shadow type="math_number" id=",/iIig$M0R8^.NOGl6xO">
+<field name="NUM">0</field>
+</shadow>
+<block type="math_arithmetic" id="FqAe/UZ%B$laMH9nFdVU">
+<field name="OP">DIVIDE</field>
+<value name="A">
+<shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="nDaS1jk$27R%#M|AAe}*">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty" id="j[Z6@Y58.K1/`n_)][Bb">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">LeftStickY</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id=";`pJObEIW}FQrg@8+{90">
+<field name="NUM">2</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="crServo_setProperty_Number" id="LeDF:.rx~u7n-@~DHVH,">
+<field name="IDENTIFIER">RIGHTservoAsCRServo</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"RIGHTservo"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="*0-wg`k{@%+cjOxldyoY">
+<field name="NUM">0</field>
+</shadow>
+<block type="math_arithmetic" id="DwC?Y^;8M%1WWQ@F8/W3">
+<field name="OP">DIVIDE</field>
+<value name="A">
+<shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty" id="_Qo6T2)3z9a*!FQk?92L">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">RightStickY</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="-MSa=~kVj6jTOr$XfXPq">
+<field name="NUM">2</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="controls_if" id="#}TAi]nrWlpW+F,,g%ZU">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="wpY)X;s_Azu0:Dupp$8%">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">A</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="dcMotor_setProperty_Number" id="Egl.WewB*Xh,YGa?42~w">
+<field name="IDENTIFIER">leftCARASOULAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"leftCARASOUL"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="mfm{,DV{Tcg}uT*8G1q}">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="FRFB}ulcK51hWcI5oKg(">
+<field name="IDENTIFIER">rightCARASOULAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"rightCARASOUL"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="kgvfaAK$vM0]s``BtH?`">
+<field name="NUM">0</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="?f3ae+Ek]YgfRQZ@%Ol3">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="^x{d3S2?,,05Y8e1EoAe">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">DpadUp</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="dcMotor_setProperty_Direction" id="@.(a~=O^NQ}@OXFB~F)6">
+<field name="IDENTIFIER">leftCARASOULAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"leftCARASOUL"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="AEzsgv8OC!5lP,}h`{^7">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="ZxRn0kr1Jgz@l{_/_prb">
+<field name="IDENTIFIER">rightCARASOULAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"rightCARASOUL"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="W@nQ,k#uWt]G6USC.O4U">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="HUvYYENTxBsA_ukfvD2(">
+<field name="IDENTIFIER">rightCARASOULAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"rightCARASOUL"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="X?W`04?r!M:%mCAjyf(r">
+<field name="NUM">0.6</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="l}#A8g.Z4NfDU#l]^%C=">
+<field name="IDENTIFIER">leftCARASOULAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"leftCARASOUL"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="oWv^w5g-UlW)hf@3M5G^">
+<field name="NUM">0.6</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="E8%Q0S3#g2B]3HW~kT9K">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="=o%nNuIp/@xhW8E0fO2S">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">DpadDown</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="dcMotor_setProperty_Direction" id="XBHPmfjG%1$SQWgZ//fM">
+<field name="IDENTIFIER">leftCARASOULAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"leftCARASOUL"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="sjL.HC(m+sAi:k}~HB+{">
+<field name="DIRECTION">FORWARD</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="v6?%~o3r{S[qN6d}@lvJ">
+<field name="IDENTIFIER">rightCARASOULAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"rightCARASOUL"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="fVSYMo##]Qx*/D1[q`jP">
+<field name="DIRECTION">FORWARD</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="3B}OBx5`OD/6Ov{RkJ%C">
+<field name="IDENTIFIER">leftCARASOULAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"leftCARASOUL"}</data>
+<value name="VALUE">
+<shadow type="math_number" id=";X5[LHn_rH;F6k}2ZkvX">
+<field name="NUM">0.6</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id=":VhG`[q_:HX+K[z!zeWS">
+<field name="IDENTIFIER">rightCARASOULAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"rightCARASOUL"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="a*~ud=nEja^[jmx/XZ%3">
+<field name="NUM">0.6</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="BlZS;roGy,H~o!S*/(I{">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="=t;Fd#VpjNu0mX(:jU1I">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">DpadRight</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="procedures_callnoreturn" id="N9}|V767_bCkE|bw|d@K">
+<mutation name="Shift Right"/>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="_0:NK9p6qv]49e8KQF6z">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="XYdwK}*r|aV5r#bUXpgd">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">DpadLeft</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="procedures_callnoreturn" id="JZdCi(p+Qb42brE08_Vs">
+<mutation name="Shift Left"/>
+</block>
+</statement>
+<next>
+<block type="controls_if" id=";wt8BDLs`@3%nw}qxTuG">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="PRyT0iW]Yy;N4gLuaoQw">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">DpadDown</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="procedures_callnoreturn" id="6MEc-2gn(i|JAL0c!p|X">
+<mutation name="Turbo Boost Backward"/>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="^YQRFR:4]0*yxZxga=SW">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id=")oJ6.V`w~,={^9Y$(9%E">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">DpadUp</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="procedures_callnoreturn" id="kx4!`cWq|$yQtay19M(t">
+<mutation name="Turbo Boost Forward"/>
+</block>
+</statement>
+<next>
+<block type="telemetry_addNumericData" id="W+1aE{c:|#=LR8]UBy47">
+<value name="KEY">
+<block type="text" id="p=:S|#QapB@Y:~07]L~]">
+<field name="TEXT">Left Pow</field>
+</block>
+</value>
+<value name="NUMBER">
+<block type="dcMotor_getProperty" id=")l?bt;SeT)jw=H;h7K0G">
+<field name="IDENTIFIER">leftBACKAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"leftBACK","block_warning_hidden":true}</data>
+</block>
+</value>
+<next>
+<block type="telemetry_addNumericData" id="fnTUd?),(XEI:}]:f}mN">
+<value name="KEY">
+<block type="text" id="aDU}G0=A7pmv3WM:ODA)">
+<field name="TEXT">Right Pow</field>
+</block>
+</value>
+<value name="NUMBER">
+<block type="dcMotor_getProperty" id="a.6ieWX3JB?^^b14yx0p">
+<field name="IDENTIFIER">rightBACKAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"rightBACK","block_warning_hidden":true}</data>
+</block>
+</value>
+<next>
+<block type="telemetry_update" id="Il/_Kv^vY42Foa}=N4Ix"/>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="DV[}?Z~8tE0j,DFg`Aze" x="1178" y="-296">
+<field name="NAME">Shift Right</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="procedures_callnoreturn" id="Ulzkgcu4l9Qhn@X${(LX">
+<mutation name="Set Direction DPAD"/>
+<next>
+<block type="procedures_callnoreturn" id="DDb/K_WdzR$Wx{h%F}0E">
+<mutation name="Move Right Power"/>
+<next>
+<block type="linearOpMode_sleep_Number" id="O{vKm0z5EJ^mYEgrVXyq">
+<value name="MILLISECONDS">
+<shadow type="math_number" id=":/:_rlB}%{kzt@hD036s">
+<field name="NUM">500</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="UjtJWPwebl!:+}VNLm((" x="1683" y="-240">
+<field name="NAME">Move lol</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="dcMotor_setDualProperty" id="?fu!mk[evxtjh1mAGC7J">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">leftBACKAsDcMotor</field>
+<field name="IDENTIFIER2">rightBACKAsDcMotor</field>
+<comment pinned="false" h="101" w="394">The Y axis of a joystick ranges from -1 in its topmost position to +1 in its bottommost position.  We negate this value so that the topmost position corresponds to maximum forward power.</comment>
+<data>{"IDENTIFIER1":"leftBACK","IDENTIFIER2":"rightBACK"}</data>
+<value name="VALUE1">
+<shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="xm^!xz;E%A,_X6P[I?kY">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_single" id="SrYF^hB64S[%K63,nM+l">
+<field name="OP">NEG</field>
+<value name="NUM">
+<block type="math_arithmetic" id="rAf4Re6,GX{H}]#s$s]S">
+<field name="OP">DIVIDE</field>
+<value name="A">
+<shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="lG|SC2%OJ_GENwhhZl]l">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty" id="TiQ?GW+aIf^v|bI#0HKc">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickY</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id=";/WTB`jHERW2UdaW9(h.">
+<field name="NUM">2</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+</value>
+<value name="VALUE2">
+<shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="uY}|nHkeXKe^U}8i.{%1">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_single" id="sX2K4DKCe4cQg^3_3rUs">
+<field name="OP">NEG</field>
+<value name="NUM">
+<block type="math_arithmetic" id="DM0{^N.lEx|uzj%BLW#G">
+<field name="OP">DIVIDE</field>
+<value name="A">
+<shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="nDaS1jk$27R%#M|AAe}*">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty" id="%hLr:R^XEGT#!okUP6gZ">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">RightStickY</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="}|MCKZzp0^/hGtfju5H#">
+<field name="NUM">2</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setDualProperty_Number" id="J$Q*Eu`1^;EtdlBKD9xw">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">rightFRONTAsDcMotor</field>
+<field name="IDENTIFIER2">leftFRONTAsDcMotor</field>
+<data>{"IDENTIFIER1":"rightFRONT","IDENTIFIER2":"leftFRONT"}</data>
+<value name="VALUE1">
+<shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="caD+Mb)ta~f3Vc-9?OZ2">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_single" id="s4:WM3V-v$!y^y/K.on8">
+<field name="OP">NEG</field>
+<value name="NUM">
+<block type="math_arithmetic" id="QQ5%1m8y8[1`c[i0s3qc">
+<field name="OP">DIVIDE</field>
+<value name="A">
+<shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="lG|SC2%OJ_GENwhhZl]l">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty" id="4/7fqTzJiciFdTu@VUt}">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">RightStickY</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="Z]ifTMVjNH:Di)T`:Ri,">
+<field name="NUM">2</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+</value>
+<value name="VALUE2">
+<shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="{:txR,Pk/Y0Zg:xZUtck">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_single" id="`^S*UFymgVNOJ/jp~KO#">
+<field name="OP">NEG</field>
+<value name="NUM">
+<block type="math_arithmetic" id="xS~pNdBHP4cZ4K?uO{kq">
+<field name="OP">DIVIDE</field>
+<value name="A">
+<shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="nDaS1jk$27R%#M|AAe}*">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty" id="0w7B;pVDM|k#?0za]m+s">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickY</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="O^=@}%1$M_mA~esCD+.!">
+<field name="NUM">2</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+</value>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="P2G;5}tgY$[E(lQ|#L=n" x="916" y="75">
+<field name="NAME">Shift Left</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="procedures_callnoreturn" id="K-4:#1[`%2HkbRxNDI}X">
+<mutation name="Set Direction DPAD"/>
+<next>
+<block type="procedures_callnoreturn" id="tULdclS;^tb:^;ZevtHM">
+<mutation name="Move Left Power"/>
+<next>
+<block type="linearOpMode_sleep_Number" id="(Cufs^eXA4%a8qxMfcI8">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="I+U}?UWOtBm:Bapxz*C1">
+<field name="NUM">500</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="UQ4e6uS9bRs}!sT436Sg" x="1420" y="107">
+<field name="NAME">Move Right Power</field>
+<comment pinned="false" h="80" w="160">Describe this function...http://192.168.43.1:8080/?page=FtcBlocks.html?project=Drive&amp;pop=true</comment>
+<statement name="STACK">
+<block type="dcMotor_setDualProperty" id="u`:vMTY/t9CTuu__NOwF">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">leftBACKAsDcMotor</field>
+<field name="IDENTIFIER2">leftFRONTAsDcMotor</field>
+<comment pinned="false" h="101" w="394">The Y axis of a joystick ranges from -1 in its topmost position to +1 in its bottommost position.  We negate this value so that the topmost position corresponds to maximum forward power.</comment>
+<data>{"IDENTIFIER1":"leftBACK","IDENTIFIER2":"leftFRONT"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id=")An3{oWgS+OJMC$XA14s">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="-Mr?4{Rhr+,-3S~KuAfm">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setDualProperty_Number" id="LvPS,P5OZ]iYdTX~]?#L">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">rightBACKAsDcMotor</field>
+<field name="IDENTIFIER2">rightFRONTAsDcMotor</field>
+<data>{"IDENTIFIER1":"rightBACK","IDENTIFIER2":"rightFRONT"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id="~t]jknh:.%?7T/a(M([3">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="IlV:ophQlFanr.M]w8Ov">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="vt@;OA@Y:yO0wxL]hL|g" x="1785" y="140">
+<field name="NAME">Set Direction DPAD</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="dcMotor_setProperty_Direction" id="-GlVF!#]CdpQmfsS]ilk">
+<field name="IDENTIFIER">leftFRONTAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"leftFRONT"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="S.vrVp1YmvL9J_/c.o.B">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="l!5Z05~bb!r5gZp`p*c!">
+<field name="IDENTIFIER">leftBACKAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"leftBACK"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="U;8{$UQ9~A#vDh!G!~;!">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="K^$DExA}!,,M_bXEGyOB">
+<field name="IDENTIFIER">rightFRONTAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"rightFRONT"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="=eb648+0=];KP#^Vpw*n">
+<field name="DIRECTION">FORWARD</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="{/P?IC!lTKk?yVg/g2P3">
+<field name="IDENTIFIER">rightBACKAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"rightBACK"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="wKO80z;:p^]duAlk;0*1">
+<field name="DIRECTION">FORWARD</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="t`_kNFqNo^~Qx}u9yE)k" x="1997" y="335">
+<field name="NAME">Move Left Power</field>
+<comment pinned="false" h="80" w="160">Describe this function...http://192.168.43.1:8080/?page=FtcBlocks.html?project=Drive&amp;pop=true</comment>
+<statement name="STACK">
+<block type="dcMotor_setDualProperty" id="y8*m5(-!?(DYV)AHH(rB">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">leftBACKAsDcMotor</field>
+<field name="IDENTIFIER2">leftFRONTAsDcMotor</field>
+<comment pinned="false" h="101" w="394">The Y axis of a joystick ranges from -1 in its topmost position to +1 in its bottommost position.  We negate this value so that the topmost position corresponds to maximum forward power.</comment>
+<data>{"IDENTIFIER1":"leftBACK","IDENTIFIER2":"leftFRONT"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id="xm^!xz;E%A,_X6P[I?kY">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="uY}|nHkeXKe^U}8i.{%1">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setDualProperty_Number" id="$W|NZdQb?Pkx/S1}oESw">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">rightBACKAsDcMotor</field>
+<field name="IDENTIFIER2">rightFRONTAsDcMotor</field>
+<data>{"IDENTIFIER1":"rightBACK","IDENTIFIER2":"rightFRONT"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id="caD+Mb)ta~f3Vc-9?OZ2">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="{:txR,Pk/Y0Zg:xZUtck">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="!=?9Ihi+5PuvOdyKI=^h" x="818" y="581">
+<field name="NAME">Turbo Boost Forward</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="procedures_callnoreturn" id="o)$C@eBIXw7Zui41)[If">
+<mutation name="Set Direction DPAD"/>
+<next>
+<block type="procedures_callnoreturn" id="qiuAL,AY.Q3s)*Uv#[d:">
+<mutation name="Move Forward Power"/>
+<next>
+<block type="linearOpMode_sleep_Number" id="SQpQ)sHvIAyLi,tu^L8D">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="ycH]IABX[G6a;@r0E)*0">
+<field name="NUM">1200</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="J,D@a(g^j=Rj$q{my{R@" x="1347" y="557">
+<mutation>
+<arg name="Position" varid="oIZk%cE?j~AQCf5?J_L0"/>
+<arg name="time" varid="eW40?n)ab+~d3S:Va-,{"/>
+</mutation>
+<field name="NAME">Grab Function</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="procedures_callnoreturn" id="=/X,_t5%g?^+_zF?%XCh">
+<mutation name="Grab Position">
+<arg name="Position"/>
+</mutation>
+<value name="ARG0">
+<block type="variables_get" id="x$^(]yG3@/83n8ah@jM8">
+<field name="VAR" id="oIZk%cE?j~AQCf5?J_L0">Position</field>
+</block>
+</value>
+<next>
+<block type="linearOpMode_sleep_Number" id=":-$Us?[wc//~DuQloo?6">
+<value name="MILLISECONDS">
+<shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number" id="%F;!a~ceiaZ}_.Rsof[u">
+<field name="NUM">1000</field>
+</shadow>
+<block type="variables_get" id="u3=U;y.En]GuhtN+ble4">
+<field name="VAR" id="eW40?n)ab+~d3S:Va-,{">time</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="ciZ18;-l+OO%X*7Th2k#" x="1755" y="536">
+<field name="NAME">Turbo Boost Backward</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="procedures_callnoreturn" id="YyaTYjPNW{j%nv)amm`3">
+<mutation name="Set Direction DPAD"/>
+<next>
+<block type="procedures_callnoreturn" id="%Z^P)GCxxXY`[!kIMbJ;">
+<mutation name="Move Backward Power"/>
+<next>
+<block type="linearOpMode_sleep_Number" id="fWD**/0VNbNdk,$LO,8P">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="in#(;/tb@VaYQNTTDhpy">
+<field name="NUM">500</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="?YKzWnr7b|?/8;{C~f5(" x="1396" y="639">
+<mutation>
+<arg name="Position" varid="oIZk%cE?j~AQCf5?J_L0"/>
+</mutation>
+<field name="NAME">Grab Position</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+</block>
+<block type="procedures_defnoreturn" id="dRRJ{{kNX4R**6;eUOTX" x="1383" y="730">
+<field name="NAME">Move Forward Power</field>
+<comment pinned="false" h="80" w="160">Describe this function...http://192.168.43.1:8080/?page=FtcBlocks.html?project=Drive&amp;pop=true</comment>
+<statement name="STACK">
+<block type="dcMotor_setDualProperty" id="s1#u;Na7PzmmHK8iCFHv">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">leftBACKAsDcMotor</field>
+<field name="IDENTIFIER2">leftFRONTAsDcMotor</field>
+<comment pinned="false" h="101" w="394">The Y axis of a joystick ranges from -1 in its topmost position to +1 in its bottommost position.  We negate this value so that the topmost position corresponds to maximum forward power.</comment>
+<data>{"IDENTIFIER1":"leftBACK","IDENTIFIER2":"leftFRONT"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id="K[~dXuVY*l@3M}FcCGHw">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="is2WR-n)%S,QXyD{#lZ-">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setDualProperty_Number" id="4f[)0LumGrJjtAw?c~g0">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">rightBACKAsDcMotor</field>
+<field name="IDENTIFIER2">rightFRONTAsDcMotor</field>
+<data>{"IDENTIFIER1":"rightBACK","IDENTIFIER2":"rightFRONT"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id="#bcjz7lFlNtQ.dvRkvzr">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="qJ8dmgj(/UhoItfMjYv_">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="/aV/4aK4SFtO;@nS;qQS" x="1837" y="728">
+<field name="NAME">Move Backward Power</field>
+<comment pinned="false" h="80" w="160">Describe this function...http://192.168.43.1:8080/?page=FtcBlocks.html?project=Drive&amp;pop=true</comment>
+<statement name="STACK">
+<block type="dcMotor_setDualProperty" id="-x5_fO/Gs|G(:d+WAI{B">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">rightBACKAsDcMotor</field>
+<field name="IDENTIFIER2">leftBACKAsDcMotor</field>
+<comment pinned="false" h="101" w="394">The Y axis of a joystick ranges from -1 in its topmost position to +1 in its bottommost position.  We negate this value so that the topmost position corresponds to maximum forward power.</comment>
+<data>{"IDENTIFIER1":"rightBACK","IDENTIFIER2":"leftBACK"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id="ns-Im_B*:ONP4WG5bpJ`">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="Ub26#i,{/9$8J~QRSqcr">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setDualProperty_Number" id="b49ko8{Og;vX4,1PH[@a">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">rightFRONTAsDcMotor</field>
+<field name="IDENTIFIER2">leftFRONTAsDcMotor</field>
+<data>{"IDENTIFIER1":"rightFRONT","IDENTIFIER2":"leftFRONT"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id=",nnD:cRsjet!605[Ul/%">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="rlM$n?9|S2xyIhC[j(qq">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</xml>
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Extra>
+<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
+<Enabled value="true" />
+</Extra>
