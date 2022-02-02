@@ -34,7 +34,7 @@ public class _2022AutonomousBlue extends LinearOpMode {
   }
 
   /**
-   * Describe this function...
+   * Shifts the Robot Left
    */
   private void Shift_Left(double Power, int Time) {
     Set_Direction_DPAD();
