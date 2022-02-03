@@ -65,7 +65,7 @@ public class _2022AutonomousBlue extends LinearOpMode {
         // Put loop blocks here.
         Shift_Left(0.4, 2000);
         Shift_Left(0, 2000);
-        leftCARASOUL.setDirection(DcMotorSimple.Direction.FORWARD);
+        leftCARASOUL.setDirection(DcMotorSimple.Direction.REVERSE);
         leftCARASOUL.setPower(0.6);
         Shift_Left(0, 5000);
         leftCARASOUL.setPower(0);
