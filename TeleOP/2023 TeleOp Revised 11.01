@@ -1,0 +1,192 @@
+package org.firstinspires.ftc.teamcode;
+
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
+
+@TeleOp(name = "_2023TeleOp (Blocks to Java)")
+public class _2023TeleOp extends LinearOpMode {
+
+  private DcMotor FrontLeft;
+  private DcMotor BackLeft;
+  private DcMotor FrontRight;
+  private DcMotor BackRight;
+
+  /**
+   * Describe this function...
+   */
+  private void Set_Direction_Normal() {
+    FrontLeft.setDirection(DcMotorSimple.Direction.REVERSE);
+    BackLeft.setDirection(DcMotorSimple.Direction.REVERSE);
+    FrontRight.setDirection(DcMotorSimple.Direction.FORWARD);
+    BackRight.setDirection(DcMotorSimple.Direction.FORWARD);
+  }
+
+  /**
+   * This function is executed when this Op Mode is selected from the Driver Station.
+   */
+  @Override
+  public void runOpMode() {
+    FrontLeft = hardwareMap.get(DcMotor.class, "Front Left");
+    BackLeft = hardwareMap.get(DcMotor.class, "Back Left");
+    FrontRight = hardwareMap.get(DcMotor.class, "Front Right");
+    BackRight = hardwareMap.get(DcMotor.class, "Back Right");
+
+    // Reverse one of the drive motors.
+    waitForStart();
+    if (opModeIsActive()) {
+      // Put run blocks here.
+      while (opModeIsActive()) {
+        Set_Direction_Normal();
+        // Put loop blocks here.
+        Move_lmao();
+        if (gamepad1.dpad_right) {
+          Shift_Right();
+        }
+        if (gamepad1.dpad_left) {
+          Shift_Left();
+        }
+        if (gamepad1.dpad_down) {
+          Turbo_Boost_Backward();
+        }
+        if (gamepad1.dpad_up) {
+          Turbo_Boost_Forward();
+        }
+        telemetry.addData("Left Pow", BackLeft.getPower());
+        telemetry.addData("Right Pow", BackRight.getPower());
+        telemetry.update();
+      }
+    }
+  }
+
+  /**
+   * Describe this function...
+   */
+  private void Shift_Right() {
+    Set_Direction_DPAD();
+    Move_Right_Power();
+    sleep(500);
+  }
+
+  /**
+   * Describe this function...
+   */
+  private void Move_lmao() {
+    // The Y axis of a joystick ranges from -1 in its topmost position
+    // to +1 in its bottommost position. We negate this value so that
+    // the topmost position corresponds to maximum forward power.
+    BackLeft.setPower(-(gamepad1.right_stick_y / 2));
+    FrontLeft.setPower(-(gamepad1.right_stick_y / 2));
+    BackRight.setPower(-(gamepad1.left_stick_y / 2));
+    FrontRight.setPower(-(gamepad1.left_stick_y / 2));
+  }
+
+  /**
+   * Describe this function...
+   */
+  private void Shift_Left() {
+    Set_Direction_DPAD();
+    Move_Left_Power();
+    sleep(500);
+  }
+
+  /**
+   * Describe this function...http://192.168.43.1:8080/?page=FtcBlocks.html?project=Drive&pop=true
+   */
+  private void Move_Right_Power() {
+    // The Y axis of a joystick ranges from -1 in its topmost position
+    // to +1 in its bottommost position. We negate this value so that
+    // the topmost position corresponds to maximum forward power.
+    BackLeft.setPower(-1);
+    FrontLeft.setPower(1);
+    BackRight.setPower(1);
+    FrontRight.setPower(-1);
+  }
+
+  /**
+   * Describe this function...
+   */
+  private void Set_Direction_DPAD() {
+    FrontLeft.setDirection(DcMotorSimple.Direction.REVERSE);
+    BackLeft.setDirection(DcMotorSimple.Direction.REVERSE);
+    FrontRight.setDirection(DcMotorSimple.Direction.FORWARD);
+    BackRight.setDirection(DcMotorSimple.Direction.FORWARD);
+  }
+
+  /**
+   * Describe this function...http://192.168.43.1:8080/?page=FtcBlocks.html?project=Drive&pop=true
+   */
+  private void Move_Left_Power() {
+    // The Y axis of a joystick ranges from -1 in its topmost position
+    // to +1 in its bottommost position. We negate this value so that
+    // the topmost position corresponds to maximum forward power.
+    BackLeft.setPower(1);
+    FrontLeft.setPower(-1);
+    BackRight.setPower(-1);
+    FrontRight.setPower(1);
+  }
+
+  /**
+   * Describe this function...
+   */
+  private void Turbo_Boost_Forward() {
+    Set_Direction_DPAD();
+    Move_Forward_Power();
+    sleep(1200);
+  }
+
+  /**
+   * Describe this function...
+   */
+  private void Grab_Function(
+      // TODO: Enter the type for argument named Position2
+      UNKNOWN_TYPE Position2,
+      long time2) {
+    Grab_Position(Position2);
+    sleep(time2);
+  }
+
+  /**
+   * Describe this function...
+   */
+  private void Turbo_Boost_Backward() {
+    Set_Direction_DPAD();
+    Move_Backward_Power();
+    sleep(500);
+  }
+
+  /**
+   * Describe this function...
+   */
+  private void Grab_Position(
+      // TODO: Enter the type for argument named Position2
+      UNKNOWN_TYPE Position2) {
+  }
+
+  /**
+   * Describe this function...http://192.168.43.1:8080/?page=FtcBlocks.html?project=Drive&pop=true
+   */
+  private void Move_Forward_Power() {
+    // The Y axis of a joystick ranges from -1 in its topmost position
+    // to +1 in its bottommost position. We negate this value so that
+    // the topmost position corresponds to maximum forward power.
+    BackLeft.setPower(1);
+    FrontLeft.setPower(1);
+    BackRight.setPower(1);
+    FrontRight.setPower(1);
+  }
+
+  /**
+   * Describe this function...http://192.168.43.1:8080/?page=FtcBlocks.html?project=Drive&pop=true
+   */
+  private void Move_Backward_Power() {
+    // The Y axis of a joystick ranges from -1 in its topmost position
+    // to +1 in its bottommost position. We negate this value so that
+    // the topmost position corresponds to maximum forward power.
+    BackRight.setPower(-1);
+    BackLeft.setPower(-1);
+    FrontRight.setPower(-1);
+    FrontLeft.setPower(-1);
+  }
+}
